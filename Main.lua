@@ -188,10 +188,10 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 			folder.Average.Text = "Average: " .. average
 			pcall(function()
 				if not isfile("UpdatedCrashAV") then
-					appendfile("UpdatedCrashAV","")	
+					writefile("UpdatedCrashAV","")	
 				end
 				local write = tostring(average)
-				writefile("UpdatedCrashAV",write)
+				appendfile("UpdatedCrashAV",write)
 			end)
 			
 		end
