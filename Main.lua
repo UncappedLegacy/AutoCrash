@@ -191,8 +191,7 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 					writefile("UpdatedCrashAV.txt","")	
 				end
 				local write = tostring(average)
-				appendfile("UpdatedCrashAV.txt",write)
-				print("Wrote to file " .. average)
+				writefile("UpdatedCrashAV.txt",write)
 			end)
 			
 		end
