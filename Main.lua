@@ -186,7 +186,13 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 			folder.Games.Text = "Games: " .. games
 			folder.True.Text = "True average: " ..  t_average
 			folder.Average.Text = "Average: " .. average
-			
+			pcall(function()
+				if not isfile("UpdatedCrashAV") then
+					appendfile("UpdatedCrashAV","")	
+				end
+				local write = tostring(average)
+				writefile("UpdatedCrashAV",write)
+			end)
 			
 		end
 	end
