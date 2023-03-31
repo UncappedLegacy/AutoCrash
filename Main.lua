@@ -133,6 +133,8 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 	local highest = 4
 	local total = 0
 	local t_total = 0
+	local wins = 0
+	local losses = 0
 	running = true
 	script.Parent.MouseButton1Down:Connect(function()
 		running = false
@@ -175,10 +177,12 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 			average = tonumber(string.sub(tostring(average), 1,4))
 			if game.ReplicatedStorage.SharedValues.CrashValues.Multiplier.Value >= average then
 				script.Parent.Parent.Status.TextColor3 = Color3.fromRGB(50,255,50)
-				folder.Status.Text = "Status: won" 
+				folder.Status.Text = "Status: won"
+				wins += 1
 			else
 				script.Parent.Parent.Status.TextColor3 = Color3.fromRGB(255,50,50)
 				folder.Status.Text = "Status: lost" 
+				losses += 1
 			end
 	
 			
@@ -190,7 +194,7 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 				if not isfile("UpdatedCrashAV.txt") then
 					writefile("UpdatedCrashAV.txt","")	
 				end
-				local write = tostring(average)
+				local write ="Average: " ..  tostring(average) .. " Losses: " .. losses .. " Wins: " .. wins .. " Win rate: " wins/losses .. "%"
 					delfile("UpdatedCrashAV.txt")
 				writefile("UpdatedCrashAV.txt",write)
 			end)
