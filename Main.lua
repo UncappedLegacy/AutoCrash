@@ -196,9 +196,9 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 				end
 				
 local percent = wins / losses
-				write_s = "Average: " ..  tostring(average) .. " Losses: " .. tostring(losses) .. " Wins: " .. tostring(wins) .. " Win rate: " tostring(string.sub(tostring(percent*100), 1,4)) .. " end"
+				write_s = "Average: " ..  tostring(average) .. " Losses: " .. tostring(losses) .. " Wins: " .. tostring(wins) .. " Win rate: " tostring(string.sub(tostring(percent*100), 1,4))
 					delfile("UpdatedCrashAV.txt")
-				writefile("UpdatedCrashAV.txt",write_s)
+				writefile("UpdatedCrashAV.txt",write_s .. "\n")
 			end)
 			
 		end
