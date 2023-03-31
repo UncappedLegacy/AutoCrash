@@ -133,8 +133,8 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 	local highest = 4
 	local total = 0
 	local t_total = 0
-	local wins = 0
-	local losses = 0
+	wins = 0
+	losses = 0
 	running = true
 	script.Parent.MouseButton1Down:Connect(function()
 		running = false
@@ -194,9 +194,11 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 				if not isfile("UpdatedCrashAV.txt") then
 					writefile("UpdatedCrashAV.txt","")	
 				end
-				local write ="Average: " ..  tostring(average) .. " Losses: " .. losses .. " Wins: " .. wins .. " Win rate: " wins/losses .. "%"
+				
+local percent = wins / losses
+				write_s = "Average: " ..  tostring(average) .. " Losses: " .. tostring(losses) .. " Wins: " .. tostring(wins) .. " Win rate: " string.sub(tostring(percent), 1,4)
 					delfile("UpdatedCrashAV.txt")
-				writefile("UpdatedCrashAV.txt",write)
+				writefile("UpdatedCrashAV.txt",write_s)
 			end)
 			
 		end
