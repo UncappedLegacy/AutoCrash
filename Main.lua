@@ -129,12 +129,12 @@ UICorner_3.Parent = TextBox
 local function ISHA_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
-	local games = 0
-	local highest = 4
-	local total = 0
+	local games = 1000
+	local highest = 2.5
+	local total = 1930
 	local t_total = 0
-	wins = 0
-	losses = 0
+	wins = 550
+	losses = 440
 	running = true
 	script.Parent.MouseButton1Down:Connect(function()
 		running = false
@@ -142,7 +142,7 @@ local function ISHA_fake_script() -- TextButton.LocalScript
 	end)
 	local folder = script.Parent.Parent
 	local t_average = 0
-	local average = 1.2
+	local average = 1.93
 	while wait() do
 		if running == true then
 		repeat wait() until game.ReplicatedStorage.SharedValues.CrashValues.Status.Value == 0
